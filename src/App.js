@@ -1,58 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React, {useEffect} from 'react';
+import "@popperjs/core/lib/popper";
+import "bootstrap/dist/js/bootstrap.bundle";
+import {onInitLoad} from "./utils/utils";
+import NavBar from "./layout/NavBar";
+import "./css/theme.css";
+import "overlayscrollbars/css/OverlayScrollbars.min.css";
+import TopBar from "./layout/TopBar";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+
+    useEffect(
+        () => {
+            onInitLoad();
+        }, []
+    );
+
+    return (
+        <div className="container" data-layout="container">
+            <NavBar/>
+            <div className="content">
+                <TopBar/>
+                <div className="card mb-3">
+                    <div className="bg-holder d-none d-lg-block bg-card"/>
+                    <div className="card-body position-relative">
+                        <div className="row">
+                            <div className="col-lg-8">
+                                <h3 className="mb-0">DashBoard</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
 
 export default App;
