@@ -6,6 +6,9 @@ import NavBar from "./layout/NavBar";
 import "./css/theme.css";
 import "overlayscrollbars/css/OverlayScrollbars.min.css";
 import TopBar from "./layout/TopBar";
+import {Route, Switch} from "react-router-dom";
+import StorageUpload from "./features/storage/Upload";
+import StorageList from "./features/storage/List";
 
 const App = () => {
 
@@ -20,16 +23,11 @@ const App = () => {
             <NavBar/>
             <div className="content">
                 <TopBar/>
-                <div className="card mb-3">
-                    <div className="bg-holder d-none d-lg-block bg-card"/>
-                    <div className="card-body position-relative">
-                        <div className="row">
-                            <div className="col-lg-8">
-                                <h3 className="mb-0">DashBoard</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <Switch>
+                    <Route path={"/storage/upload"} exact component={StorageUpload}/>
+                    <Route path={"/storage/all"} exact component={StorageList}/>
+                </Switch>
+
             </div>
         </div>
     );
