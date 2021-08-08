@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.jpeg";
 import {Link} from "react-router-dom";
 import NavBarLink from "./navbar/NavBarLink";
 import {
@@ -25,7 +25,7 @@ const NavBar = () => {
                 </div>
                 <Link className="navbar-brand" to="">
                     <div className="d-flex align-items-center py-3">
-                        <img className="me-2" src={logo} alt="Logo" width="40"/>
+                        <img className="me-2 rounded-circle" src={logo} alt="Logo" width="40"/>
                         <span className="font-sans-serif">Admin</span>
                     </div>
                 </Link>

@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.jpeg";
 import {Link} from "react-router-dom";
 import NavBarLink from "./navbar/NavBarLink";
 import {faDatabase, faUpload} from "@fortawesome/free-solid-svg-icons";

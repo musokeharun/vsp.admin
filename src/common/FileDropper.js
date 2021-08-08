@@ -9,7 +9,7 @@ const FileDropper = ({onDropEvent}) => {
     const onDropAccepted = useCallback((acceptedFiles) => {
         acceptedFiles.forEach((file) => {
             onDropEvent(file.name, file);
-            console.log(file.name, file);
+            //console.log(file.name, file);
             // const reader = new FileReader()
             // reader.onabort = () => console.log('file reading was aborted')
             // reader.onerror = () => console.log('file reading has failed')
@@ -23,7 +23,6 @@ const FileDropper = ({onDropEvent}) => {
 
 
     const {getRootProps, getInputProps, isDragActive,} = useDropzone({
-        accept: ['video/*', "image/*"],
         onDropAccepted: onDropAccepted
     });
 

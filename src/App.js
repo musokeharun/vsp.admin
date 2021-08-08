@@ -9,6 +9,8 @@ import TopBar from "./layout/TopBar";
 import {Route, Switch} from "react-router-dom";
 import StorageUpload from "./features/storage/Upload";
 import StorageList from "./features/storage/List";
+import {ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 
 const App = () => {
 
@@ -20,6 +22,7 @@ const App = () => {
 
     return (
         <div className="container" data-layout="container">
+            <ToastContainer/>
             <NavBar/>
             <div className="content">
                 <TopBar/>

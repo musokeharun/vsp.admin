@@ -5,12 +5,14 @@ import UploadBar from "./upload/UploadBar";
 import {v1} from "uuid";
 import {useDispatch, useSelector} from "react-redux";
 import {add, remove, selectUploads} from "./upload/UploadSlice";
+import Input from "../../common/Input";
 
 const StorageUpload = ({}) => {
     const uploads = useSelector(selectUploads);
     const dispatch = useDispatch();
+    const [path, setPath] = useState("");
 
-    console.log("Uploads", uploads);
+    console.log("Uploads", uploads, "Path", path);
 
     let onHandleDropEvent = (name, file) => {
         console.log("Drop Event")
@@ -48,10 +50,18 @@ const StorageUpload = ({}) => {
             <>
                 <FileDropper onDropEvent={onHandleDropEvent}/>
             </>
+
+            <Input name={"path"} label={"Path"} onChange={e => setPath(e.currentTarget.value)}/>
+
             {
                 uploads.map(
                     ({name, file, id}) => (
-                        <UploadBar key={id} id={id} name={name} file={file} onDelete={id => onHandleDelete(id)}/>
+                        <UploadBar path={path}
+                                   key={id}
+                                   id={id}
+                                   name={name}
+                                   file={file}
+                                   onDelete={id => onHandleDelete(id)}/>
                     )
                 )
             }
