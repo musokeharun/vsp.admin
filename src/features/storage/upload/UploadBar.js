@@ -73,7 +73,7 @@ const UploadBar = ({name = "Movie File", onDelete, id, file, path}) => {
                     .then(e => console.log("Loaded to Server"))
                     .catch(e => console.log("Error loading to server"));
                 console.log('Chunk uploaded', info)
-            }
+            },chunkSize : 6553600
         })
         try {
             let url = await upload.start()
