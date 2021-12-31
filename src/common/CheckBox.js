@@ -3,7 +3,7 @@ import classNames from "classnames";
 import {v1} from "uuid";
 
 const CheckBox = ({options, handleChange, name, type = "radio", current, row = true}) => {
-    console.log("Checked", current)
+    // console.log("Checked", current)
 
     let _name = v1();
 

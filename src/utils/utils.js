@@ -1,6 +1,7 @@
 import scrollbarInit from "./scrollbar";
 import detectorInit from "./detector";
 import {tooltipInit} from "./tooltip";
+import {DateTime} from "luxon";
 
 export const onInitLoad = () => {
 
@@ -18,24 +19,6 @@ export const addClass = (el, className) => {
     el.classList.add(className);
 };
 
-export const getSizeUnits = (value = 0) => {
-    if (value === 0 || isNaN(parseInt(value))) {
-        return `0 B`;
-    } else if (value <= 1024) {
-        return `${Math.round(value / 1024)} KB`;
-    } else if (value <= (1024 * 1024)) {
-        return `${Math.round(value / (1024 * 1024))} MB`;
-    } else if (value <= (1024 * 1024 * 1024)) {
-        return `${Math.round(value / (1024 * 1024 * 1024))} GB`;
-    } else if (value <= (1024 * 1024 * 1024 * 1024)) {
-        return `${Math.round(value / (1024 * 1024 * 1024 * 1024))} TB`;
-    } else if (value <= (1024 * 1024 * 1024 * 1024 * 1024)) {
-        return `${Math.round(value / (1024 * 1024 * 1024 * 1024 * 1024))} PB`;
-    } else {
-        return "N/A";
-    }
-}
-
 export const getReadableSizeFromBytes = (bytes) => {
     const units = ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
     let l = 0
@@ -48,5 +31,8 @@ export const getReadableSizeFromBytes = (bytes) => {
 
 export const getExtensionFromFileName = (filename) => {
     return filename.split('.').pop();
+}
 
+export const getDateTimeFromSql = (sql) => {
+    return DateTime.fromSQL(sql).setZone("Africa/Kampala");
 }

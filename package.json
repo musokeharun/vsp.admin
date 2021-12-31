@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^6.2.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
@@ -16,7 +17,9 @@
     "classnames": "^2.3.1",
     "gcs-browser-upload": "^1.0.2",
     "is_js": "^0.9.0",
+    "joi-browser": "^13.4.0",
     "lodash": "^4.17.21",
+    "luxon": "^2.0.2",
     "overlayscrollbars": "^1.13.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -24,13 +27,14 @@
     "react-redux": "^7.2.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-select": "^4.3.1",
     "react-toastify": "^7.0.4",
     "uuid": "^8.3.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -49,6 +53,9 @@
     ]
   },
   "devDependencies": {
-    "jquery": "^3.6.0"
+    "autoprefixer": "^9.8.6",
+    "jquery": "^3.6.0",
+    "postcss": "^7.0.36",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.9"
   }
 }

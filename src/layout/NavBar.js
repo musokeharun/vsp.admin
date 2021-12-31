@@ -9,7 +9,7 @@ import {
     faCloudUploadAlt,
     faCommentAlt,
     faCubes,
-    faDatabase, faFileContract, faFilter, faVideo
+    faDatabase, faFileContract, faFilter, faMoneyBill, faUserCheck, faUserFriends, faVideo
 } from "@fortawesome/free-solid-svg-icons";
 import NavBarDivider from "./navbar/NavBarDivider";
 
@@ -58,18 +58,30 @@ const NavBar = () => {
                         </li>
 
                         <li className="nav-item">
+                            <NavBarLink link={"/app/package"} icon={faMoneyBill} title={"Packages"}/>
+                        </li>
+
+                        <li className="nav-item">
                             <NavBarDivider title={"Content"}/>
                         </li>
-
                         <li className="nav-item">
-                            <NavBarLink link={"/content/categories"} icon={faFilter} title={"Categories"}/>
+                            <NavBarLink link={"/content/category"} icon={faFilter} title={"Categories"}/>
+                        </li>
+                        <li className="nav-item">
+                            <NavBarLink link={"/content/genre"} icon={faFileContract} title={"Genres"}/>
+                        </li>
+                        <li className="nav-item">
+                            <NavBarLink link={"/content/vod"} icon={faVideo} title={"Vod"}/>
                         </li>
 
                         <li className="nav-item">
-                            <NavBarLink link={"/content/genres"} icon={faFileContract} title={"Genres"}/>
+                            <NavBarDivider title={"Management"}/>
                         </li>
                         <li className="nav-item">
-                            <NavBarLink link={"/content/movies"} icon={faVideo} title={"Movies"}/>
+                            <NavBarLink link={"/manage/customer"} icon={faUserCheck} title={"Customers"}/>
+                        </li>
+                        <li className="nav-item">
+                            <NavBarLink link={"/manage/users"} icon={faUserFriends} title={"Users"}/>
                         </li>
 
                         <li className="nav-item">
